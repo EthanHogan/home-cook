@@ -14,7 +14,7 @@ export default async function MyCookbookPage() {
       </div>
 
       <div className="container">
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense key={"recipe-list"} fallback={<div>Loading...</div>}>
           <RecipeList />
         </Suspense>
       </div>
