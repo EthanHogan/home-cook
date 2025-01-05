@@ -84,6 +84,14 @@ pnpm db:push
 pnpm db:studio
 ```
 
+## Visualize DB Schema
+
+Generates a `schema.dbml` file. To see a visual representation of you database schema, copy paste the content of the file to [dbdiagram.io](https://dbdiagram.io/) or download the VS Code extension [DBML Entity-Relationship Diagrams visualizer](https://marketplace.visualstudio.com/items?itemName=bocovo.dbml-erd-visualizer).
+
+```sh
+pnpm db:visualize
+```
+
 ## Deployment
 
 Deployment should be as easy as pushing changes to `main` branch if a project has been created in Vercel and linked to the repository.
@@ -113,3 +121,7 @@ git push
    DATABASE_URL='mysql://root:myPassword@localhost:3333/UserPlatform'
   ```
   2. Update the other `DATABASE_...` variables with the DB info from the URL. Check `.env.example` for examples
+
+```
+
+```

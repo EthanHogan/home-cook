@@ -1,0 +1,110 @@
+enum tag_color {
+  slate
+  red
+}
+
+enum tag_type {
+  Recipe
+  Ingredient
+}
+
+enum unit {
+  g
+  cup
+  lb
+  oz
+  tbs
+  tbps
+  clove
+  slice
+}
+
+table "home-cook_ingredient_category" {
+  id integer [pk, not null]
+  name varchar(256) [not null]
+  recipe_id integer [not null]
+
+  indexes {
+    recipe_id [name: 'home-cook-ingredient_category-recipe_id-idx']
+  }
+}
+
+table "home-cook_ingredient_tags" {
+  id integer [pk, not null]
+  tag_id integer [not null]
+  ingredient_id integer [not null]
+
+  indexes {
+    tag_id [name: 'home-cook-ingredient_tags-tag_id-idx']
+    ingredient_id [name: 'home-cook-ingredient_tags-ingredient_id-idx']
+  }
+}
+
+table "home-cook_ingredients" {
+  id integer [pk, not null]
+  name varchar(256) [not null]
+  measurement numeric
+  unit unit
+  custom_unit varchar(256)
+  category_id integer [not null]
+
+  indexes {
+    category_id [name: 'home-cook-ingredients-category_id-idx']
+  }
+}
+
+table "home-cook_posts" {
+  id integer [pk, not null]
+  user_id varchar(256) [not null]
+  name varchar(280) [not null]
+  created_at "timestamp with time zone" [not null, default: `CURRENT_TIMESTAMP`]
+  updated_at "timestamp with time zone" [not null, default: `CURRENT_TIMESTAMP`]
+
+  indexes {
+    user_id [name: 'home-cook-posts-userId-idx']
+  }
+}
+
+table "home-cook_recipe_tags" {
+  id integer [pk, not null]
+  tag_id integer [not null]
+  recipe_id integer [not null]
+
+  indexes {
+    tag_id [name: 'home-cook-recipe_tags-tag_id-idx']
+    recipe_id [name: 'home-cook-recipe_tags-recipe_id-idx']
+  }
+}
+
+table "home-cook_recipes" {
+  id integer [pk, not null]
+  title varchar(256) [not null]
+  description varchar(280) [not null]
+  servings_desc varchar(280) [not null]
+  cooktime_minutes integer [not null]
+  user_id integer [not null]
+  created_at "timestamp with time zone" [not null, default: `CURRENT_TIMESTAMP`]
+  updated_at "timestamp with time zone" [not null, default: `CURRENT_TIMESTAMP`]
+
+  indexes {
+    user_id [name: 'home-cook-recipes-user_id-idx']
+  }
+}
+
+table "home-cook_tags" {
+  id integer [pk, not null]
+  tag_type tag_type [not null]
+  tag_color tag_color [not null]
+}
+
+ref: "home-cook_ingredient_category".recipe_id > "home-cook_recipes".id
+
+ref: "home-cook_ingredient_tags".ingredient_id > "home-cook_ingredients".id
+
+ref: "home-cook_ingredient_tags".tag_id > "home-cook_tags".id
+
+ref: "home-cook_ingredients".category_id - "home-cook_ingredient_category".id
+
+ref: "home-cook_recipe_tags".recipe_id > "home-cook_recipes".id
+
+ref: "home-cook_recipe_tags".tag_id > "home-cook_tags".id
