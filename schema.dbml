@@ -53,18 +53,6 @@ table "home-cook_ingredients" {
   }
 }
 
-table "home-cook_posts" {
-  id integer [pk, not null]
-  user_id varchar(256) [not null]
-  name varchar(280) [not null]
-  created_at "timestamp with time zone" [not null, default: `CURRENT_TIMESTAMP`]
-  updated_at "timestamp with time zone" [not null, default: `CURRENT_TIMESTAMP`]
-
-  indexes {
-    user_id [name: 'home-cook-posts-userId-idx']
-  }
-}
-
 table "home-cook_recipe_tags" {
   id integer [pk, not null]
   tag_id integer [not null]
