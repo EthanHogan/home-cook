@@ -7,7 +7,7 @@ import { connection } from "next/server";
 export default async function RecipeList() {
   await connection();
   // redirects to sign in if not authenticated
-  await auth.protect();
+  // await auth.protect();
 
   const recipes = await getRecipes();
 
