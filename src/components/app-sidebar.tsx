@@ -50,10 +50,7 @@ export function AppSidebar() {
               ))} */}
               <SidebarMenuItem key={"my-cookbook"}>
                 <SidebarMenuButton asChild>
-                  <Link href={"/my-cookbook"}>
-                    <BookOpenText />
-                    <span>My Cookbook</span>
-                  </Link>
+                  <Link href={"/my-cookbook"}>My Cookbook</Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
 
