@@ -1,11 +1,7 @@
-import { auth } from "@clerk/nextjs/server";
 import { Suspense } from "react";
 import RecipeList from "./_components/RecipeList";
 
-export default async function MyCookbookPage() {
-  // redirects to sign in if not authenticated
-  await auth.protect();
-
+export default function MyCookbookPage() {
   return (
     <div className="flex flex-col gap-2">
       <div className="container">
