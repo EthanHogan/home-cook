@@ -19,6 +19,11 @@ const items = [
     url: "/my-cookbook",
     icon: BookOpenText,
   },
+  {
+    title: "Posts",
+    url: "/posts",
+    icon: BookOpenText,
+  },
 ];
 
 export function AppSidebar() {
