@@ -69,7 +69,7 @@ export const recipes = createTable(
     description: varchar("description", { length: 280 }).notNull(),
     servings_desc: varchar("servings_desc", { length: 280 }).notNull(),
     cooktime_minutes: integer("cooktime_minutes").notNull(),
-    user_id: integer("user_id").notNull(),
+    user_id: varchar("user_id", { length: 256 }).notNull(),
     created_at: timestamp("created_at", { withTimezone: true })
       .default(sql`CURRENT_TIMESTAMP`)
       .notNull(),

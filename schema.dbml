@@ -82,7 +82,7 @@ table "home-cook_recipes" {
   description varchar(280) [not null]
   servings_desc varchar(280) [not null]
   cooktime_minutes integer [not null]
-  user_id integer [not null]
+  user_id varchar(256) [not null]
   created_at "timestamp with time zone" [not null, default: `CURRENT_TIMESTAMP`]
   updated_at "timestamp with time zone" [not null, default: `CURRENT_TIMESTAMP`]
 
