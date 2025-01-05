@@ -13,18 +13,18 @@ import {
 import Link from "next/link";
 
 // Menu items.
-// const items = [
-//   {
-//     title: "My Cookbook",
-//     url: "/my-cookbook",
-//     icon: BookOpenText,
-//   },
-//   {
-//     title: "Posts",
-//     url: "/posts",
-//     icon: BookOpenText,
-//   },
-// ];
+const items = [
+  {
+    title: "My Cookbook",
+    url: "/my-cookbook",
+    icon: BookOpenText,
+  },
+  {
+    title: "Static",
+    url: "/static",
+    icon: BookOpenText,
+  },
+];
 
 export function AppSidebar() {
   return (
@@ -38,7 +38,7 @@ export function AppSidebar() {
           <SidebarGroupLabel>Recipes</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {/* {items.map((item) => (
+              {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
                     <Link href={item.url}>
@@ -47,9 +47,9 @@ export function AppSidebar() {
                     </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
-              ))} */}
+              ))}
 
-              <SidebarMenuItem key={"static"}>
+              {/* <SidebarMenuItem key={"static"}>
                 <SidebarMenuButton asChild>
                   <Link href={"/static"}>Static</Link>
                 </SidebarMenuButton>
@@ -59,7 +59,7 @@ export function AppSidebar() {
                 <SidebarMenuButton asChild>
                   <Link href={"/my-cookbook"}>My Cookbook</Link>
                 </SidebarMenuButton>
-              </SidebarMenuItem>
+              </SidebarMenuItem> */}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
