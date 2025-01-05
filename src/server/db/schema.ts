@@ -86,6 +86,11 @@ export const recipesRelations = relations(recipes, ({ many }) => ({
   ingredient_category: many(ingredient_category),
 }));
 
+export const recipesSelectSchema = createSelectSchema(recipes);
+export const recipesInsertSchema = createInsertSchema(recipes);
+export type Recipe = InferSelectModel<typeof recipes>;
+export type NewRecipe = InferInsertModel<typeof recipes>;
+
 // Table recipe_tags {
 //   id integer [primary key]
 //   tag_id integer [ref: - tags.id]
@@ -115,6 +120,11 @@ export const recipe_tagsRelations = relations(recipe_tags, ({ one }) => ({
     references: [tags.id],
   }),
 }));
+
+export const recipe_tagsSelectSchema = createSelectSchema(recipe_tags);
+export const recipe_tagsInsertSchema = createInsertSchema(recipe_tags);
+export type RecipeTag = InferSelectModel<typeof recipe_tags>;
+export type NewRecipeTag = InferInsertModel<typeof recipe_tags>;
 
 // Table ingredient_tags {
 //   id integer [primary key]
@@ -153,6 +163,11 @@ export const ingredient_tagsRelations = relations(
   }),
 );
 
+export const ingredient_tagsSelectSchema = createSelectSchema(ingredient_tags);
+export const ingredient_tagsInsertSchema = createInsertSchema(ingredient_tags);
+export type IngredientTag = InferSelectModel<typeof ingredient_tags>;
+export type NewIngredientTag = InferInsertModel<typeof ingredient_tags>;
+
 // Table tags {
 //   id integer [primary key]
 //   tag_type enum [note: '"Recipe" | "Ingredient"']
@@ -171,6 +186,11 @@ export const tagsRelations = relations(tags, ({ many }) => ({
   recipe_tags: many(recipe_tags),
   ingredient_tags: many(ingredient_tags),
 }));
+
+export const tagsSelectSchema = createSelectSchema(tags);
+export const tagsInsertSchema = createInsertSchema(tags);
+export type Tag = InferSelectModel<typeof tags>;
+export type NewTag = InferInsertModel<typeof tags>;
 
 // Table ingredient_category {
 //   id integer [primary key]
@@ -201,6 +221,15 @@ export const ingredient_categoryRelations = relations(
     }),
   }),
 );
+
+export const ingredient_categorySelectSchema =
+  createSelectSchema(ingredient_category);
+export const ingredient_categoryInsertSchema =
+  createInsertSchema(ingredient_category);
+export type IngredientCategory = InferSelectModel<typeof ingredient_category>;
+export type NewIngredientCategory = InferInsertModel<
+  typeof ingredient_category
+>;
 
 // Table ingredients {
 //   id integer [primary key]
@@ -248,3 +277,8 @@ export const ingredientsRelations = relations(ingredients, ({ one, many }) => ({
   }),
   tags: many(ingredient_tags),
 }));
+
+export const ingredientsSelectSchema = createSelectSchema(ingredients);
+export const ingredientsInsertSchema = createInsertSchema(ingredients);
+export type Ingredient = InferSelectModel<typeof ingredients>;
+export type NewIngredient = InferInsertModel<typeof ingredients>;
