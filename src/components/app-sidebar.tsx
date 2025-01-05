@@ -13,18 +13,18 @@ import {
 import Link from "next/link";
 
 // Menu items.
-const items = [
-  {
-    title: "My Cookbook",
-    url: "/my-cookbook",
-    icon: BookOpenText,
-  },
-  {
-    title: "Posts",
-    url: "/posts",
-    icon: BookOpenText,
-  },
-];
+// const items = [
+//   {
+//     title: "My Cookbook",
+//     url: "/my-cookbook",
+//     icon: BookOpenText,
+//   },
+//   {
+//     title: "Posts",
+//     url: "/posts",
+//     icon: BookOpenText,
+//   },
+// ];
 
 export function AppSidebar() {
   return (
@@ -38,7 +38,7 @@ export function AppSidebar() {
           <SidebarGroupLabel>Recipes</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {items.map((item) => (
+              {/* {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
                     <Link href={item.url}>
@@ -47,7 +47,24 @@ export function AppSidebar() {
                     </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
-              ))}
+              ))} */}
+              <SidebarMenuItem key={"my-cookbook"}>
+                <SidebarMenuButton asChild>
+                  <Link href={"/my-cookbook"}>
+                    <BookOpenText />
+                    <span>My Cookbook</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+
+              <SidebarMenuItem key={"posts"}>
+                <SidebarMenuButton asChild>
+                  <Link href={"/posts"}>
+                    <BookOpenText />
+                    <span>Posts</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
