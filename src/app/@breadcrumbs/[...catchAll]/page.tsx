@@ -5,6 +5,7 @@ type Props = {
     catchAll: string[];
   };
 };
-export default function BreadcrumbSlot({ params: { catchAll } }: Props) {
+export default async function BreadcrumbSlot({ params }: Props) {
+  const { catchAll } = await params;
   return <Breadcrumbs routes={catchAll} />;
 }
