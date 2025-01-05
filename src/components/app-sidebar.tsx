@@ -48,20 +48,18 @@ export function AppSidebar() {
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))} */}
-              {/* <SidebarMenuItem key={"my-cookbook"}>
+
+              <SidebarMenuItem key={"static"}>
+                <SidebarMenuButton asChild>
+                  <Link href={"/static"}>Static</Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+
+              <SidebarMenuItem key={"my-cookbook"}>
                 <SidebarMenuButton asChild>
                   <Link href={"/my-cookbook"}>My Cookbook</Link>
                 </SidebarMenuButton>
-              </SidebarMenuItem> */}
-
-              {/* <SidebarMenuItem key={"posts"}>
-                <SidebarMenuButton asChild>
-                  <Link href={"/posts"}>
-                    <BookOpenText />
-                    <span>Posts</span>
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem> */}
+              </SidebarMenuItem>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
