@@ -10,7 +10,7 @@ export default function MyCookbookPage() {
       </div>
 
       <div className="container">
-        <Suspense key={"recipe-list"} fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>Loading...</div>}>
           <RecipeList />
         </Suspense>
       </div>
