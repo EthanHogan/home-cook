@@ -30,27 +30,6 @@ export default function RootLayout({
   children: React.ReactNode;
   breadcrumbs: React.ReactNode;
 }>) {
-  // return (
-  //   <ClerkProvider>
-  //     <html
-  //       lang="en"
-  //       className={`${GeistSans.variable}`}
-  //       suppressHydrationWarning
-  //     >
-  //       <body>
-  //         <ThemeProvider
-  //           attribute="class"
-  //           defaultTheme="system"
-  //           enableSystem
-  //           disableTransitionOnChange
-  //         >
-  //           <TopNav />
-  //           <TanstackProvider>{children}</TanstackProvider>
-  //         </ThemeProvider>
-  //       </body>
-  //     </html>
-  //   </ClerkProvider>
-  // );
   return (
     <ClerkProvider>
       <html

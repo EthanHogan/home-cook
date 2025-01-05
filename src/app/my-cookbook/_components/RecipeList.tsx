@@ -1,13 +1,11 @@
 import Link from "next/link";
 import { getRecipes } from "~/actions/getRecipes";
 import RecipeCard from "./RecipeCard";
-import { auth } from "@clerk/nextjs/server";
+
 import { connection } from "next/server";
 
 export default async function RecipeList() {
   await connection();
-  // redirects to sign in if not authenticated
-  await auth.protect();
 
   const recipes = await getRecipes();
 
