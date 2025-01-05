@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React, { type ReactElement } from "react";
 
 import {
   Breadcrumb,
@@ -20,12 +20,11 @@ export function Breadcrumbs({ routes = [] }: { routes: string[] }) {
 
   for (let i = 0; i < routes.length; i++) {
     const route = routes[i];
-    let href;
 
-    href = fullHref ? `${fullHref}/${route}` : `/${route}`;
+    const href: string = fullHref ? `${fullHref}/${route}` : `/${route}`;
     fullHref = href;
 
-    const pageTitle = route ? pageTitleLookup.get(route) || route : route;
+    const pageTitle = route ? (pageTitleLookup.get(route) ?? route) : route;
 
     if (i === routes.length - 1) {
       breadcrumbPage = (

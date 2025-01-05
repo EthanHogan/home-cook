@@ -1,3 +1,3 @@
-export default function DefaultSlot(p: any) {
+export default function DefaultSlot() {
   return <header></header>;
 }

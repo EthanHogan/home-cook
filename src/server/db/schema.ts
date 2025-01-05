@@ -13,7 +13,6 @@ import {
   index,
   integer,
   pgEnum,
-  pgTable,
   pgTableCreator,
   timestamp,
   varchar,
