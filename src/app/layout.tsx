@@ -57,7 +57,7 @@ export default function RootLayout({
                 <SidebarInset className="h-full peer-data-[variant=inset]:min-h-[calc(100svh-theme(spacing.4)-var(--header-height))]">
                   <header className="flex h-10 shrink-0 items-center gap-2 border-b px-4">
                     <SidebarTrigger />
-                    {breadcrumbs}
+                    {/* {breadcrumbs} */}
                   </header>
                   <ScrollArea className="h-[calc(100svh+theme(spacing.2)-(var(--header-height)*2))] px-3">
                     {children}
