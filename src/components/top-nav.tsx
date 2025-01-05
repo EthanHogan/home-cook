@@ -22,6 +22,12 @@ export function TopNav() {
               >
                 Static
               </Link>
+              <Link
+                href="/my-cookbook"
+                className="inline-flex items-center px-1 pt-1 text-sm font-medium text-primary"
+              >
+                My Cookbook
+              </Link>
             </div>
           </div>
           <div className="flex items-center gap-3">
