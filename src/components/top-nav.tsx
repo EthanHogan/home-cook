@@ -17,12 +17,6 @@ export function TopNav() {
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
               <Link
-                href="/my-cookbook"
-                className="inline-flex items-center px-1 pt-1 text-sm font-medium text-primary"
-              >
-                Cookbook
-              </Link>
-              <Link
                 href="/static"
                 className="inline-flex items-center px-1 pt-1 text-sm font-medium text-primary"
               >
