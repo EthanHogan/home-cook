@@ -13,6 +13,15 @@ import {
   SidebarTrigger,
 } from "~/components/ui/sidebar";
 import { AppSidebar } from "~/components/app-sidebar";
+import { ScrollArea } from "~/components/ui/scroll-area";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "~/components/ui/breadcrumb";
 
 export const metadata: Metadata = {
   title: "home-cook",
@@ -29,7 +38,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html
         lang="en"
-        className={`${GeistSans.variable}`}
+        className={`${GeistSans.variable} overflow-hidden antialiased`}
         suppressHydrationWarning
       >
         <body
@@ -49,11 +58,26 @@ export default function RootLayout({
               <TopNav />
               <SidebarProvider>
                 <AppSidebar />
-                <SidebarInset className="peer-data-[variant=inset]:min-h-[calc(100svh-theme(spacing.4)-var(--header-height)) h-full">
-                  <main>
-                    <SidebarTrigger />
-                    <div className="p-3">{children}</div>
-                  </main>
+                <SidebarInset className="h-full peer-data-[variant=inset]:min-h-[calc(100svh-theme(spacing.4)-var(--header-height))]">
+                  <header className="flex h-10 shrink-0 items-center gap-2 border-b px-4">
+                    <SidebarTrigger className="bg-opacity-50" />
+                    <Breadcrumb>
+                      <BreadcrumbList>
+                        <BreadcrumbItem className="hidden md:block">
+                          <BreadcrumbLink href="#">
+                            Building Your Application
+                          </BreadcrumbLink>
+                        </BreadcrumbItem>
+                        <BreadcrumbSeparator className="hidden md:block" />
+                        <BreadcrumbItem>
+                          <BreadcrumbPage>Data Fetching</BreadcrumbPage>
+                        </BreadcrumbItem>
+                      </BreadcrumbList>
+                    </Breadcrumb>
+                  </header>
+                  <ScrollArea className="h-[calc(100svh-theme(spacing.4)-(var(--header-height)*2))]">
+                    {children}
+                  </ScrollArea>
                 </SidebarInset>
               </SidebarProvider>
             </TanstackProvider>
@@ -63,13 +87,3 @@ export default function RootLayout({
     </ClerkProvider>
   );
 }
-
-// return (
-//   <SidebarProvider>
-//       <AppSidebar />
-//       <main>
-//         <SidebarTrigger />
-//         {children}
-//       </main>
-//     </SidebarProvider>
-// )

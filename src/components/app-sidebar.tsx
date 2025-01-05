@@ -1,11 +1,4 @@
-import {
-  BookOpenText,
-  Calendar,
-  Home,
-  Inbox,
-  Search,
-  Settings,
-} from "lucide-react";
+import { BookOpenText } from "lucide-react";
 
 import {
   Sidebar,
@@ -13,7 +6,6 @@ import {
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
-  SidebarInset,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
@@ -32,7 +24,7 @@ const items = [
 export function AppSidebar() {
   return (
     <Sidebar
-      variant="sidebar"
+      variant="inset"
       collapsible="icon"
       className="top-[--header-height]"
     >

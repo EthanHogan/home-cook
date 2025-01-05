@@ -3,13 +3,12 @@ import Link from "next/link";
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 import { ModeToggle } from "./mode-toggle";
-import { SidebarTrigger } from "./ui/sidebar";
 
 export function TopNav() {
   return (
-    <nav className="z-20 border-b">
+    <nav className="w-full border-b">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 justify-between">
+        <div className="flex h-[--header-height] justify-between">
           <div className="flex">
             <div className="flex flex-shrink-0 items-center">
               <Link href="/" className="text-2xl font-bold text-primary">
