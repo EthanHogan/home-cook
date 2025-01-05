@@ -26,12 +26,12 @@ export function TopNav() {
           </div>
           <div className="flex items-center gap-3">
             <ModeToggle />
-            <SignedOut>
+            {/* <SignedOut>
               <SignInButton />
             </SignedOut>
             <SignedIn>
               <UserButton />
-            </SignedIn>
+            </SignedIn> */}
           </div>
         </div>
       </div>
