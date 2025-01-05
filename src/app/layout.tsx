@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-const HEADER_HEIGHT = "4rem";
+// const HEADER_HEIGHT = "4rem";
 
 export default function RootLayout({
   children,
@@ -51,44 +51,44 @@ export default function RootLayout({
       </html>
     </ClerkProvider>
   );
-  return (
-    <ClerkProvider>
-      <html
-        lang="en"
-        className={`${GeistSans.variable} overflow-hidden antialiased`}
-        suppressHydrationWarning
-      >
-        <body
-          style={
-            {
-              "--header-height": HEADER_HEIGHT,
-            } as React.CSSProperties
-          }
-        >
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <TanstackProvider>
-              <TopNav />
-              <SidebarProvider>
-                <AppSidebar />
-                <SidebarInset className="h-full peer-data-[variant=inset]:min-h-[calc(100svh-theme(spacing.4)-var(--header-height))]">
-                  <header className="flex h-10 shrink-0 items-center gap-2 border-b px-4">
-                    <SidebarTrigger />
-                    {breadcrumbs}
-                  </header>
-                  <ScrollArea className="h-[calc(100svh+theme(spacing.2)-(var(--header-height)*2))] px-3">
-                    {children}
-                  </ScrollArea>
-                </SidebarInset>
-              </SidebarProvider>
-            </TanstackProvider>
-          </ThemeProvider>
-        </body>
-      </html>
-    </ClerkProvider>
-  );
+  // return (
+  //   <ClerkProvider>
+  //     <html
+  //       lang="en"
+  //       className={`${GeistSans.variable} overflow-hidden antialiased`}
+  //       suppressHydrationWarning
+  //     >
+  //       <body
+  //         style={
+  //           {
+  //             "--header-height": HEADER_HEIGHT,
+  //           } as React.CSSProperties
+  //         }
+  //       >
+  //         <ThemeProvider
+  //           attribute="class"
+  //           defaultTheme="system"
+  //           enableSystem
+  //           disableTransitionOnChange
+  //         >
+  //           <TanstackProvider>
+  //             <TopNav />
+  //             <SidebarProvider>
+  //               <AppSidebar />
+  //               <SidebarInset className="h-full peer-data-[variant=inset]:min-h-[calc(100svh-theme(spacing.4)-var(--header-height))]">
+  //                 <header className="flex h-10 shrink-0 items-center gap-2 border-b px-4">
+  //                   <SidebarTrigger />
+  //                   {breadcrumbs}
+  //                 </header>
+  //                 <ScrollArea className="h-[calc(100svh+theme(spacing.2)-(var(--header-height)*2))] px-3">
+  //                   {children}
+  //                 </ScrollArea>
+  //               </SidebarInset>
+  //             </SidebarProvider>
+  //           </TanstackProvider>
+  //         </ThemeProvider>
+  //       </body>
+  //     </html>
+  //   </ClerkProvider>
+  // );
 }
