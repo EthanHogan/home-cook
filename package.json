@@ -8,7 +8,7 @@
     "check": "next lint && tsc --noEmit",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
-    "db:push": "drizzle-kit push",
+    "db:push": "drizzle-kit push && tsx ./src/server/db/dbml.ts",
     "db:studio": "drizzle-kit studio",
     "db:visualize": "tsx ./src/server/db/dbml.ts",
     "dev": "next dev --turbo",

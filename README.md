@@ -74,6 +74,8 @@ pnpm dev
 
 ## Pushing Schema Changes to the Database
 
+_also updates schema.dbml_
+
 ```sh
 pnpm db:push
 ```
