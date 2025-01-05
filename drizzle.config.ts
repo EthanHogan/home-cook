@@ -8,5 +8,5 @@ export default {
   dbCredentials: {
     url: env.DATABASE_URL,
   },
-  tablesFilter: ["user-platform_*"],
+  tablesFilter: ["home-cook_*"],
 } satisfies Config;

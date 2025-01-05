@@ -18,7 +18,7 @@ import {
  *
  * @see https://orm.drizzle.team/docs/goodies#multi-project-schema
  */
-const tablePrefix = "user-platform";
+const tablePrefix = "home-cook";
 export const createTable = pgTableCreator((name) => `${tablePrefix}_${name}`);
 
 export const posts = pgTable(

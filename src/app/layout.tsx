@@ -9,7 +9,7 @@ import { TopNav } from "~/components/top-nav";
 import TanstackProvider from "~/components/TanstackProvider";
 
 export const metadata: Metadata = {
-  title: "user-platform",
+  title: "home-cook",
   description: "Personal project blueprint for user-centric applications.",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
