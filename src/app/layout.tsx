@@ -33,7 +33,11 @@ const HEADER_HEIGHT = "4rem";
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+  breadcrumbs,
+}: Readonly<{
+  children: React.ReactNode;
+  breadcrumbs: React.ReactNode;
+}>) {
   return (
     <ClerkProvider>
       <html
@@ -61,21 +65,9 @@ export default function RootLayout({
                 <SidebarInset className="h-full peer-data-[variant=inset]:min-h-[calc(100svh-theme(spacing.4)-var(--header-height))]">
                   <header className="flex h-10 shrink-0 items-center gap-2 border-b px-4">
                     <SidebarTrigger className="bg-opacity-50" />
-                    <Breadcrumb>
-                      <BreadcrumbList>
-                        <BreadcrumbItem className="hidden md:block">
-                          <BreadcrumbLink href="#">
-                            Building Your Application
-                          </BreadcrumbLink>
-                        </BreadcrumbItem>
-                        <BreadcrumbSeparator className="hidden md:block" />
-                        <BreadcrumbItem>
-                          <BreadcrumbPage>Data Fetching</BreadcrumbPage>
-                        </BreadcrumbItem>
-                      </BreadcrumbList>
-                    </Breadcrumb>
+                    {breadcrumbs}
                   </header>
-                  <ScrollArea className="h-[calc(100svh-theme(spacing.4)-(var(--header-height)*2))]">
+                  <ScrollArea className="h-[calc(100svh-theme(spacing.4)-(var(--header-height)*2))] p-3">
                     {children}
                   </ScrollArea>
                 </SidebarInset>
