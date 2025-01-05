@@ -16,7 +16,7 @@ import { AppSidebar } from "~/components/app-sidebar";
 import { ScrollArea } from "~/components/ui/scroll-area";
 
 export const metadata: Metadata = {
-  title: "home-cook",
+  title: "home cook",
   description: "Personal project blueprint for user-centric applications.",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
@@ -25,10 +25,10 @@ const HEADER_HEIGHT = "4rem";
 
 export default function RootLayout({
   children,
-  breadcrumbs,
+  // breadcrumbs,
 }: Readonly<{
   children: React.ReactNode;
-  breadcrumbs: React.ReactNode;
+  // breadcrumbs: React.ReactNode;
 }>) {
   return (
     <ClerkProvider>
