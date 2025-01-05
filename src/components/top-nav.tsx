@@ -3,6 +3,7 @@ import Link from "next/link";
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 import { ModeToggle } from "./mode-toggle";
+import { Suspense } from "react";
 
 export function TopNav() {
   return (
@@ -32,12 +33,15 @@ export function TopNav() {
           </div>
           <div className="flex items-center gap-3">
             <ModeToggle />
-            <SignedOut>
-              <SignInButton />
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
+            {/* THIS IS CAUSING EVERY PAGE TO BE DYNAMIC, may need to enable PPR */}
+            {/* <Suspense>
+              <SignedOut>
+                <SignInButton />
+              </SignedOut>
+              <SignedIn>
+                <UserButton />
+              </SignedIn>
+            </Suspense> */}
           </div>
         </div>
       </div>
