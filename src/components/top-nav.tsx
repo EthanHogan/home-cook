@@ -34,14 +34,14 @@ export function TopNav() {
           <div className="flex items-center gap-3">
             <ModeToggle />
             {/* THIS IS CAUSING EVERY PAGE TO BE DYNAMIC, may need to enable PPR */}
-            {/* <Suspense>
+            <Suspense>
               <SignedOut>
                 <SignInButton />
               </SignedOut>
               <SignedIn>
                 <UserButton />
               </SignedIn>
-            </Suspense> */}
+            </Suspense>
           </div>
         </div>
       </div>
