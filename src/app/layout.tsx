@@ -8,8 +8,8 @@ import { TopNav } from "~/components/top-nav";
 import { ScrollArea } from "~/components/ui/scroll-area";
 import {
   SidebarInset,
-  SidebarTrigger,
   SidebarProvider,
+  SidebarTrigger,
 } from "~/components/ui/sidebar";
 import "~/styles/globals.css";
 
@@ -35,6 +35,12 @@ export default function RootLayout({
         className={`${GeistSans.variable} overflow-hidden antialiased`}
         suppressHydrationWarning
       >
+        <head>
+          <script
+            src="https://unpkg.com/react-scan/dist/auto.global.js"
+            async
+          />
+        </head>
         <body
           style={
             {
