@@ -151,12 +151,14 @@ export type NewIngredientTag = InferInsertModel<typeof ingredient_tags>;
 //   tag_color enum [note: '"slate" | "red" | etc..']
 // }
 export const tag_typeEnum = pgEnum("tag_type", ["Recipe", "Ingredient"]);
-export const tag_colorEnum = pgEnum("tag_color", ["slate", "red"]);
+export const tag_colorEnum = pgEnum("tag_color", ["slate", "red", "yellow"]);
 
 export const tags = createTable("tags", {
   id: integer("id").primaryKey().generatedByDefaultAsIdentity(),
   tag_type: tag_typeEnum().notNull(),
   tag_color: tag_colorEnum().notNull(),
+  tag_value: varchar("tag_value", { length: 30 }).notNull(),
+  user_id: varchar("user_id", { length: 256 }).notNull(),
 });
 
 export const tagsRelations = relations(tags, ({ many }) => ({

@@ -1,6 +1,7 @@
 enum tag_color {
   slate
   red
+  yellow
 }
 
 enum tag_type {
@@ -83,6 +84,8 @@ table "home-cook_tags" {
   id integer [pk, not null]
   tag_type tag_type [not null]
   tag_color tag_color [not null]
+  tag_value varchar(30) [not null]
+  user_id varchar(256) [not null]
 }
 
 ref: "home-cook_ingredient_category".recipe_id > "home-cook_recipes".id
