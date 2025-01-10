@@ -71,3 +71,20 @@ export default function RootLayout({
     </ClerkProvider>
   );
 }
+
+/*
+ DO NOT DELETE or dynamic tw classes will break
+ tag colors
+
+ bg-red-200
+ border-red-300
+ text-red-500
+
+ bg-slate-200
+ border-slate-300
+ text-slate-500
+
+ bg-yellow-200
+ border-yellow-300
+ text-yellow-500
+ */

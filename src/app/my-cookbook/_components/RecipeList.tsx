@@ -10,7 +10,7 @@ export default async function RecipeList() {
   const recipes = await getRecipes();
 
   return (
-    <ul className={`flex flex-row flex-wrap gap-5`}>
+    <ul className={`flex flex-row flex-wrap items-stretch gap-5`}>
       {[
         ...recipes,
         ...recipes,
