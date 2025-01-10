@@ -1,5 +1,5 @@
 import { BookOpenText } from "lucide-react";
-
+import Link from "next/link";
 import {
   Sidebar,
   SidebarContent,
@@ -10,7 +10,6 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "./ui/sidebar";
-import Link from "next/link";
 
 // Menu items.
 const items = [

@@ -1,19 +1,17 @@
-import "~/styles/globals.css";
-import { type Metadata } from "next";
-
 import { ClerkProvider } from "@clerk/nextjs";
 import { GeistSans } from "geist/font/sans";
-
+import { type Metadata } from "next";
+import TanstackProvider from "~/components/TanstackProvider";
+import { AppSidebar } from "~/components/app-sidebar";
 import { ThemeProvider } from "~/components/theme-provider";
 import { TopNav } from "~/components/top-nav";
-import TanstackProvider from "~/components/TanstackProvider";
+import { ScrollArea } from "~/components/ui/scroll-area";
 import {
   SidebarInset,
-  SidebarProvider,
   SidebarTrigger,
+  SidebarProvider,
 } from "~/components/ui/sidebar";
-import { AppSidebar } from "~/components/app-sidebar";
-import { ScrollArea } from "~/components/ui/scroll-area";
+import "~/styles/globals.css";
 
 export const metadata: Metadata = {
   title: "home cook",

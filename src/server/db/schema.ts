@@ -1,13 +1,11 @@
 // Example model schema from the Drizzle docs
 // https://orm.drizzle.team/docs/sql-schema-declaration
-
 import {
   type InferInsertModel,
   type InferSelectModel,
   relations,
   sql,
 } from "drizzle-orm";
-import { createInsertSchema, createSelectSchema } from "drizzle-zod";
 import {
   decimal,
   index,
@@ -17,6 +15,7 @@ import {
   timestamp,
   varchar,
 } from "drizzle-orm/pg-core";
+import { createInsertSchema, createSelectSchema } from "drizzle-zod";
 
 /**
  * This is an example of how to use the multi-project schema feature of Drizzle ORM. Use the same

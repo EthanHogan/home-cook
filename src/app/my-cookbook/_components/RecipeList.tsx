@@ -1,8 +1,7 @@
 import Link from "next/link";
+import { connection } from "next/server";
 import { getRecipes } from "~/actions/getRecipes";
 import RecipeCard from "./RecipeCard";
-
-import { connection } from "next/server";
 
 export default async function RecipeList() {
   await connection();

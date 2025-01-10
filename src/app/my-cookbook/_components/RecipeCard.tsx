@@ -1,4 +1,4 @@
-import { Trash } from "lucide-react";
+import type { RecipeWithTags } from "~/actions/getRecipes";
 import {
   Card,
   CardContent,
@@ -6,7 +6,6 @@ import {
   CardHeader,
   CardTitle,
 } from "~/components/ui/card";
-import type { RecipeWithTags } from "~/actions/getRecipes";
 import type { Tag } from "~/server/db/schema";
 
 export default function RecipeCard({ recipe }: { recipe: RecipeWithTags }) {
