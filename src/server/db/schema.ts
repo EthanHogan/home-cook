@@ -13,6 +13,7 @@ import {
   pgEnum,
   pgTableCreator,
   timestamp,
+  uuid,
   varchar,
 } from "drizzle-orm/pg-core";
 import { createInsertSchema, createSelectSchema } from "drizzle-zod";
@@ -41,6 +42,7 @@ export const recipes = createTable(
   "recipes",
   {
     id: integer("id").primaryKey().generatedByDefaultAsIdentity(),
+    uuid: uuid().defaultRandom(),
     title: varchar("title", { length: 256 }).notNull(),
     description: varchar("description", { length: 280 }).notNull(),
     servings_desc: varchar("servings_desc", { length: 280 }).notNull(),

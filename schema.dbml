@@ -67,6 +67,7 @@ table "home-cook_recipe_tags" {
 
 table "home-cook_recipes" {
   id integer [pk, not null]
+  uuid uuid [default: `gen_random_uuid()`]
   title varchar(256) [not null]
   description varchar(280) [not null]
   servings_desc varchar(280) [not null]
