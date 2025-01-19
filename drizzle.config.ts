@@ -7,5 +7,5 @@ export default {
   dbCredentials: {
     url: env.DATABASE_URL,
   },
-  tablesFilter: ["home-cook_*"],
+  tablesFilter: ["home-cook_*", "home-cook-*"],
 } satisfies Config;

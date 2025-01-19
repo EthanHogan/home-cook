@@ -151,8 +151,15 @@ export type NewIngredientTag = InferInsertModel<typeof ingredient_tags>;
 //   tag_type enum [note: '"Recipe" | "Ingredient"']
 //   tag_color enum [note: '"slate" | "red" | etc..']
 // }
-export const tag_typeEnum = pgEnum("tag_type", ["Recipe", "Ingredient"]);
-export const tag_colorEnum = pgEnum("tag_color", ["slate", "red", "yellow"]);
+export const tag_typeEnum = pgEnum(`${tablePrefix}-tag_type`, [
+  "Recipe",
+  "Ingredient",
+]);
+export const tag_colorEnum = pgEnum(`${tablePrefix}-tag_color`, [
+  "slate",
+  "red",
+  "yellow",
+]);
 
 export const tags = createTable("tags", {
   id: integer("id").primaryKey().generatedByDefaultAsIdentity(),
@@ -222,7 +229,7 @@ export type NewIngredientCategory = InferInsertModel<
 //   category_id integer
 // }
 
-export const unitEnum = pgEnum("unit", [
+export const unitEnum = pgEnum(`${tablePrefix}-unit`, [
   "g",
   "cup",
   "lb",

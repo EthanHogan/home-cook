@@ -1,10 +1,10 @@
-enum tag_color {
+enum "home-cook-tag_color" {
   slate
   red
   yellow
 }
 
-enum tag_type {
+enum "home-cook-tag_type" {
   Recipe
   Ingredient
 }
@@ -83,8 +83,8 @@ table "home-cook_recipes" {
 
 table "home-cook_tags" {
   id integer [pk, not null]
-  tag_type tag_type [not null]
-  tag_color tag_color [not null]
+  tag_type home-cook-tag_type [not null]
+  tag_color home-cook-tag_color [not null]
   tag_value varchar(30) [not null]
   user_id varchar(256) [not null]
 }
