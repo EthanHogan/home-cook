@@ -9,7 +9,7 @@ enum "home-cook-tag_type" {
   Ingredient
 }
 
-enum unit {
+enum "home-cook-unit" {
   g
   cup
   lb
@@ -45,7 +45,7 @@ table "home-cook_ingredients" {
   id integer [pk, not null]
   name varchar(256) [not null]
   measurement numeric
-  unit unit
+  unit home-cook-unit
   custom_unit varchar(256)
   category_id integer [not null]
 
